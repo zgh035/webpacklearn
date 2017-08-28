@@ -1,0 +1,19 @@
+{
+  "name": "webpack-sample-project",
+  "version": "1.0.0",
+  "description": "sample webpack project",
+  "scripts": {
+    "start": "webpack"
+  },
+  "author": "zgh",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "webpack": "^3.5.5"
+  },
+  "devDependencies": {
+    "webpack": "^3.5.5"
+  },
+  "main": "webpack.config.js",
+  "keywords": []
+}
