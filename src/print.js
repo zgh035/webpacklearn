@@ -1,4 +1,4 @@
 export default function  printMe () {
     
-    console.log('webpack');
+    console.log('webpack test');
 }
