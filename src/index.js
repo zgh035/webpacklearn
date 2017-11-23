@@ -1,33 +1,70 @@
-import _ from 'lodash'
+import _ from 'lodash';
+// import $ from 'jquery'
+// import numRef from './ref.json';
+// import $ from 'jQuery'
+import $ from 'expose?$!jquery'
 
-// var _ = require('lodash');
+import cookie from 'cookie';
 
-import './style.css';
-import printMe from './print.js'
+import url from 'url';
 
-function componet() {
-    var ele = document.createElement('div');
-    ele.textContent = _.join(['hello','webpack','webpack-dev-server','test']," ");
-    ele.classList.add('hello');
-    ele.onclick = printMe;
-    return ele;
-}
+var cookies = require('cookie-signature')
 
-var ele = componet();
-
-document.body.appendChild(ele);
-
- if (module.hot) {
-   module.hot.accept('./print.js', function() {
-     console.log('Accepting the updated printMe module!');
+var escapeHtml = require('escape-html');
 
 
-    document.body.removeChild(ele);
+var testa = cookies.sign('hello', 'tobiiscool');
+console.log(testa)
 
-    ele = componet();
+console.log(cookies.unsign(testa,'tobiiscool'))
 
-    document.body.appendChld(ele);
 
-     printMe();
-   })
- }
+const a = document.createElement('div');
+
+a.setAttribute('id','a');
+
+document.body.appendChild(a);
+
+
+document.write(escapeHtml('<div>a</div>'));
+
+export function numToWord(num) {
+  return 'numToWord';
+    // return _.reduce(numRef, (accum, ref) => {
+    //     return ref.num === num ? ref.word : accum;
+    // }, '');
+};
+
+console.log(url.parse('http://127.0.0.1:8080?id=1&name=2',true,true));
+
+cookie.serialize('foo', 'bar')
+
+
+cookie.serialize('test','test');
+
+$('#a').css({
+  'width' : '100px',
+  'height' : '100px',
+  'background' : 'red'
+});
+
+export function wordToNum(word) {
+  return 'wordToNum';
+    // return _.reduce(numRef, (accum, ref) => {
+    //     return ref.word === word && word.toLowerCase() ? ref.num : accum;
+    // }, -1);
+};
+
+
+
+var defined = require('defined');
+var opts = { x : 1,y : false, w : 4 };
+var x = defined(opts.x, opts.y, opts.w, 100);
+console.log(x);
+
+
+var postcss = require('postcss')
+var colormin = require('postcss-colormin');
+
+var css = 'rgba(255, 125, 33, 1)';
+console.log(postcss(colormin()).process(css).css);

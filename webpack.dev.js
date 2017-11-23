@@ -8,10 +8,11 @@ const webpackBase = require('./webpack.base.js');
 
 
 module.exports = Merge(webpackBase,{
+    // devtool: 'cheap-module-source-map',
     devServer : {
         contentBase : '/dist',
         port  : 9012,
-        hot : true
+        // hot : true
     },
     plugins : [
         new htmlWebpackPlugin({
@@ -26,15 +27,17 @@ module.exports = Merge(webpackBase,{
                 exclude : ['test']
             }
         ),
-        new webpack.HotModuleReplacementPlugin(),
+        // new webpack.HotModuleReplacementPlugin(),
         // new webpack.optimize.UglifyJsPlugin(options => {
         //     sourceMap: options.devtool && (options.devtool.indexOf("sourcemap") >= 0 || options.devtool.indexOf("source-map") >= 0)
         // })
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV' : JSON.stringify('production')
+            'process.env.NODE_ENV' : JSON.stringify('development')
         }),
         new webpack.optimize.CommonsChunkPlugin({
             name : 'common'
         })
     ]
 })
+
+console.log(process.env.NODE_ENV);

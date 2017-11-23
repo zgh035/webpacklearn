@@ -63,5 +63,6 @@
 
 
 module.exports = function (env) {
-    return require(`./webpack.${env}.js`);
+    console.log(env);
+    return require(`./webpack.pro.js`);
 }
