@@ -1,6 +1,10 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 abc
 asdf
+=======
+fasd:
+>>>>>>> master
 =======
 fasd:
 >>>>>>> master

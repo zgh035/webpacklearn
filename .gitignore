@@ -1,6 +1,11 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 webpacklearn
 store
+=======
+node_modules/
+leanr/
+>>>>>>> master
 =======
 node_modules/
 leanr/
